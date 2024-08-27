@@ -1,9 +1,9 @@
-node_modules
-.DS_Store
-.env
-
+# node_modules
+# .DS_Store
+# .env
 # dependencies
 /node_modules
+/.next
 
 # production build
 /build
