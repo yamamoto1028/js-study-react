@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer.js";
 import { Links } from "../components/Links";
 import { Headline } from "../components/Headline";
 
-export default function Home() {
+export default function About() {
   return (
     <main className={styles.main}>
       <Headline page="about" />
