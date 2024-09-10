@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import styles from "../page.module.css";
+import styles from "./Main.module.css";
 import { Headline } from "./Headline";
 import { Links } from "./Links";
 

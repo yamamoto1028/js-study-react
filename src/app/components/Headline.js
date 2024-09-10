@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
-import styles from "../page.module.css";
+import styles from "./Headline.module.css";
+import { FooterImage } from "./FooterImage";
 
 export function Headline(props) {
   return (
@@ -18,15 +18,7 @@ export function Headline(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          By{" "}
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            className={styles.vercelLogo}
-            width={100}
-            height={24}
-            priority
-          />
+          <FooterImage text="By " />
         </a>
       </div>
     </div>

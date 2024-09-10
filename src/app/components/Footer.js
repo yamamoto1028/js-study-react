@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
-import styles from "../page.module.css";
+import styles from "./Footer.module.css";
+import { FooterImage } from "./FooterImage";
 
 export function Footer() {
   return (
@@ -10,15 +10,7 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       />
-      Thanks By{" "}
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        className={styles.vercelLogo}
-        width={100}
-        height={24}
-        priority
-      />
+      <FooterImage text="Thanks By " />
     </footer>
   );
 }
