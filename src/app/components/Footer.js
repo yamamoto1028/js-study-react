@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "../page.module.css";
 
@@ -9,7 +10,7 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       />
-        Thanks By{" "}
+      Thanks By{" "}
       <Image
         src="/vercel.svg"
         alt="Vercel Logo"
