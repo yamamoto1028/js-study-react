@@ -3,13 +3,25 @@ import Image from "next/image";
 import styles from "@/app/components/Main/Main.module.css";
 import { Headline } from "@/app/components/Headline";
 import { Links } from "@/app/components/Links";
+import { useCallback } from "react";
 
 export function Main(props) {
+  const foo = "1";
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  }, []);
   return (
     <main className={styles.main}>
       <Headline page={props.page}>
-        <code className={styles.code}>src/app/{props.page}.js</code>
+        <code className={styles.code}>src/app/{props.page}.jsx</code>
       </Headline>
+
+      <a href="/about" onClick={handleClick}>
+        ボタン
+      </a>
+
       <div className={styles.center}>
         <Image
           className={styles.logo}
