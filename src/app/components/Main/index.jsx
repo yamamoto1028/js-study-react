@@ -7,6 +7,8 @@ import { useCallback, useEffect, useState } from "react";
 
 export function Main(props) {
   const [count, setCount] = useState(1);
+  const [text, setText] = useState("");
+  const [isShow, setIsShow] = useState(true);
 
   const handleClick = useCallback(() => {
     console.log(count);
@@ -14,6 +16,19 @@ export function Main(props) {
       setCount((count) => count + 1);
     }
   }, [count]);
+
+  const handleDisplay = useCallback(() => {
+    setIsShow((isShow) => !isShow);
+  }, []);
+
+  const hundleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      //5文字以上入力したらアラート出してリターンで文字数制御
+      alert("5文字以内にしてください");
+      return;
+    }
+    setText(e.target.value.trim()); //スペース打たせない制御。他にも色々ある
+  }, []);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
@@ -24,10 +39,12 @@ export function Main(props) {
 
   return (
     <main className={styles.main}>
-      <h1>{count}</h1>
+      {isShow ? <h1>{count}</h1> : null}
       <button href="/about" onClick={handleClick}>
         ボタン
       </button>
+      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      <input type="text" value={text} onChange={hundleChange} />
       <Headline page={props.page}>
         <code className={styles.code}>src/app/{props.page}.jsx</code>
       </Headline>
