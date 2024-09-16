@@ -1,6 +1,6 @@
 "use client";
-import styles from "./Headline.module.css";
-import { FooterImage } from "./FooterImage";
+import styles from "@/app/components/Headline/Headline.module.css";
+import { FooterImage } from "@/app/components/Footer/FooterImage";
 
 export function Headline(props) {
   return (

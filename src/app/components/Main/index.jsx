@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import styles from "./Main.module.css";
-import { Headline } from "./Headline";
-import { Links } from "./Links";
+import styles from "@/app/components/Main/Main.module.css";
+import { Headline } from "@/app/components/Headline";
+import { Links } from "@/app/components/Links";
 
 export function Main(props) {
   return (

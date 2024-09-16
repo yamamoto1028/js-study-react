@@ -1,6 +1,6 @@
 "use client";
-import styles from "./Footer.module.css";
-import { FooterImage } from "./FooterImage";
+import styles from "@/app/components/Footer/Footer.module.css";
+import { FooterImage } from "@/app/components/Footer/FooterImage.jsx";
 
 export function Footer() {
   return (
