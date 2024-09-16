@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/app/components/Main/Main.module.css";
 import { Headline } from "@/app/components/Headline";
 import { Links } from "@/app/components/Links";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 export function Main(props) {
   const foo = "1";
@@ -12,6 +12,16 @@ export function Main(props) {
     e.preventDefault();
     alert(foo);
   }, []);
+
+  useEffect(() => {
+    console.log("マウント");
+    document.body.style.backgroundColor = "lightblue";
+    return () => {
+      console.log("アンマウント");
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+
   return (
     <main className={styles.main}>
       <Headline page={props.page}>
