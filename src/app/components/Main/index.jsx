@@ -3,34 +3,32 @@ import Image from "next/image";
 import styles from "@/app/components/Main/Main.module.css";
 import { Headline } from "@/app/components/Headline";
 import { Links } from "@/app/components/Links";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function Main(props) {
-  const foo = "1";
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, []);
+  const [count, setCount] = useState(1);
+
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
 
   useEffect(() => {
-    console.log("マウント");
     document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("アンマウント");
       document.body.style.backgroundColor = "";
     };
   }, []);
 
   return (
     <main className={styles.main}>
+      <h1>{count}</h1>
+      <button href="/about" onClick={handleClick}>
+        ボタン
+      </button>
       <Headline page={props.page}>
         <code className={styles.code}>src/app/{props.page}.jsx</code>
       </Headline>
-
-      <a href="/about" onClick={handleClick}>
-        ボタン
-      </a>
 
       <div className={styles.center}>
         <Image
