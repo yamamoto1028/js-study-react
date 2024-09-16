@@ -3,15 +3,17 @@ import Image from "next/image";
 import styles from "@/app/components/Main/Main.module.css";
 import { Headline } from "@/app/components/Headline";
 import { Links } from "@/app/components/Links";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function Main(props) {
   const [count, setCount] = useState(1);
 
-  const handleClick = (e) => {
-    setCount((count) => count + 1);
-    setCount((count) => count + 1);
-  };
+  const handleClick = useCallback(() => {
+    console.log(count);
+    if (count < 10) {
+      setCount((count) => count + 1);
+    }
+  }, [count]);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
