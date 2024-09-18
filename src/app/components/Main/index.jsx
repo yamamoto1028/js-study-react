@@ -9,6 +9,7 @@ export function Main(props) {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(() => {
     console.log(count);
@@ -30,6 +31,16 @@ export function Main(props) {
     setText(e.target.value.trim()); //スペース打たせない制御。他にも色々ある
   }, []);
 
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        alert("同じ要素がすでに存在します。");
+        return prevArray;
+      }
+      return [...prevArray, text]; //スプレッド構文→MDN見て学習　破壊的メソッドは基本的に使ってはいけないため
+    });
+  }, [text]);
+
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
     return () => {
@@ -45,6 +56,13 @@ export function Main(props) {
       </button>
       <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
       <input type="text" value={text} onChange={hundleChange} />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
+
       <Headline page={props.page}>
         <code className={styles.code}>src/app/{props.page}.jsx</code>
       </Headline>
