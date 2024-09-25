@@ -2,14 +2,14 @@
 import Link from "next/link";
 import styles from "@/app/components/Header/Header.module.css";
 
-export function Header() {
+export function Header(props) {
   return (
     <header className={styles.Header}>
       <Link href="/" className={styles.anchor}>
-        Index
+        home
       </Link>
       <Link href="/about" className={styles.anchor}>
-        About
+        about
       </Link>
     </header>
   );
