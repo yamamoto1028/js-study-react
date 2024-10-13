@@ -12,12 +12,9 @@ export default function Home() {
   return (
     <div className={styles.main}>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
       <button href="/about" onClick={handleClick}>
         ボタン
       </button>
-      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
-
       <input type="text" value={text} onChange={hundleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
@@ -25,7 +22,8 @@ export default function Home() {
           return <li key={item}>{item}</li>;
         })}
       </ul>
-
+      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      {isShow ? <h1>{count}</h1> : null}
       <Main page="home" />
       <Footer />
     </div>
