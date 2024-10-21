@@ -12,7 +12,7 @@ export function Header() {
         about
       </Link>
       <Link href="/todoList" className={styles.anchor}>
-        タスクリスト
+        TodoList
       </Link>
     </header>
   );

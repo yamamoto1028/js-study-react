@@ -1,0 +1,18 @@
+.inputForm input {
+  width: 15rem;
+  height: 1.7rem;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  background-color: azure;
+  color: #000;
+}
+
+.inputForm button {
+  padding: 0.38rem 0.5rem;
+  background: rgb(33, 32, 100);
+}
+
+.toDoButton {
+  border: none;
+  width: 100px;
+}
