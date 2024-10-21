@@ -11,6 +11,9 @@ export function Header() {
       <Link href="/about" className={styles.anchor}>
         about
       </Link>
+      <Link href="/todoList" className={styles.anchor}>
+        タスクリスト
+      </Link>
     </header>
   );
 }
